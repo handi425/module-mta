@@ -2,7 +2,7 @@
 
 Katalog unduhan indikator untuk aplikasi custom **MetaTrader 5**.
 
-Gunakan APK custom **6314 / 500.6310-mtc.4** atau lebih baru untuk seluruh fitur terbaru. Host **API 4** mendukung Smart Money Concepts [LuxAlgo] dan tetap menerima paket API 1/2/3. **SMC memerlukan APK 6314/API 4**; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi enam indikator custom. Lima port terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
+Gunakan APK custom **6315 / 500.6310-mtc.5** atau lebih baru untuk seluruh perbaikan terbaru, bersama **Smart Money Concepts [LuxAlgo] 1.0.1**. Host **API 4** tetap menerima paket API 1/2/3. Batas fitur minimum **SMC adalah APK 6314/API 4**; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi enam indikator custom. Lima port terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
 
 ## Memasang indikator
 
@@ -31,6 +31,8 @@ Riwayat harga yang diperlukan harus sudah tersedia sebelum perhitungan dapat dit
 Enam port tambahan menggambar melalui Canvas tanpa membuat objek grafis chart. Garis, zona dan teks tetap terikat ke waktu/harga sumber ketika chart digeser atau diperbesar. HPX ZWave tidak memiliki tombol di chart; derajat proyeksi dipilih melalui `InpFibonacciDegree` pada pengaturan indikator.
 
 SMC menyediakan seluruh 52 kontrol input sumber yang dapat diedit, bersama delapan judul bagian pada 60 baris halaman parameter native. Pilihan timeframe FVG mencakup `Current` dan 21 timeframe MT5. Ketika riwayat broker masih dimuat, indikator menunggu dan mencoba lagi tanpa menghapus pemasangannya. SMC tidak mempunyai alert atau notifikasi.
+
+Pada SMC 1.0.1, isi kotak OB/FVG memakai alpha maksimal 0x26 (sekitar 15% opacity). Warna dan alpha batas serta zona premium/discount dipertahankan. Garis dan teks strong/weak maupun MTF berakhir di candle nyata terakhir, tanpa label 20 bar ke depan atau penempatan mengikuti viewport. APK 6315 memperbaiki cleanup saat surface chart berubah agar callback Layer lama tidak menghapus Layer pengganti.
 
 Quarter menandai setiap level utama di skala harga kanan dengan warna levelnya. Jika angka level akan menutup harga berjalan atau terpotong batas chart, hanya tanda garis pada harga tepatnya yang ditampilkan.
 
