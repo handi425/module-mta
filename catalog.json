@@ -44,10 +44,10 @@
     {
       "id": "hpx.quarter.levels",
       "name": "HPX Quarter Zones",
-      "version": "2.3.0",
+      "version": "2.3.1",
       "url": "modules/hpxquarter.mt5ind",
-      "sha256": "49164eacec99086ee8800b3b77d9c16919c04f0b8ff595f7e2a52f6fc46496bc",
-      "size": 18707
+      "sha256": "3734030edf87ba21b6e293e4654847f306b58cf98ae76168dd50b30037e0c551",
+      "size": 18839
     },
     {
       "id": "hpx.zwave",
