@@ -56,6 +56,14 @@
       "url": "modules/hpxzwave.mt5ind",
       "sha256": "53e59279bb4dbf828f7206a5db871e23f5fc33fc7dd3316c0e2752d9af685cf5",
       "size": 423210
+    },
+    {
+      "id": "luxalgo.smc",
+      "name": "Smart Money Concepts [LuxAlgo]",
+      "version": "1.0.0",
+      "url": "modules/smc.mt5ind",
+      "sha256": "108ea009ec86c6c85fcbdc6477947abdce0ad155153a4e50748244f78652e105",
+      "size": 23053
     }
   ]
 }
