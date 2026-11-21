@@ -1,0 +1,21 @@
+{
+  "format": 1,
+  "modules": [
+    {
+      "id": "example.ema20",
+      "name": "EMA 20 (Converted)",
+      "version": "1.0.0",
+      "url": "modules/ema20.mt5ind",
+      "sha256": "3d3565ee2898509319372a853a2f89b6e8f49204217684da96c83e148a1b8af3",
+      "size": 6019
+    },
+    {
+      "id": "example.sma50",
+      "name": "SMA 50 (Converted)",
+      "version": "1.0.0",
+      "url": "modules/sma50.mt5ind",
+      "sha256": "2ba70f3c5aada5752ad41eaff0172ee63024c3d11f1b245517829b7e27c11309",
+      "size": 6000
+    }
+  ]
+}
