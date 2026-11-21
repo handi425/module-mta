@@ -16,6 +16,46 @@
       "url": "modules/sma50.mt5ind",
       "sha256": "2ba70f3c5aada5752ad41eaff0172ee63024c3d11f1b245517829b7e27c11309",
       "size": 6000
+    },
+    {
+      "id": "tazkan.maribbon",
+      "name": "MA Ribbon",
+      "version": "1.0.0",
+      "url": "modules/maribbon.mt5ind",
+      "sha256": "4831eabdbb3e2a51cb5952f668a882f011f3d362c2a76c2cb1fd5ddfc3b21ea2",
+      "size": 11720
+    },
+    {
+      "id": "tazkan.rsidiv",
+      "name": "RSI Divergence",
+      "version": "1.0.0",
+      "url": "modules/rsidiv.mt5ind",
+      "sha256": "6b762bd90e60326ad6ce7b6727a3f2e64e8b72a271240f3589f01f33dfebb576",
+      "size": 19756
+    },
+    {
+      "id": "tazkan.fibozone",
+      "name": "FiboZone Pro",
+      "version": "1.0.0",
+      "url": "modules/fibozone.mt5ind",
+      "sha256": "e8fc50734766503da09971a6225e5bc97fceb25769bfce0e2c7b9edeab326f21",
+      "size": 29949
+    },
+    {
+      "id": "hpx.quarter.levels",
+      "name": "HPX Quarter Zones",
+      "version": "2.3.0",
+      "url": "modules/hpxquarter.mt5ind",
+      "sha256": "49164eacec99086ee8800b3b77d9c16919c04f0b8ff595f7e2a52f6fc46496bc",
+      "size": 18707
+    },
+    {
+      "id": "hpx.zwave",
+      "name": "HPX Zwave Pro",
+      "version": "1.0.0",
+      "url": "modules/hpxzwave.mt5ind",
+      "sha256": "53e59279bb4dbf828f7206a5db871e23f5fc33fc7dd3316c0e2752d9af685cf5",
+      "size": 423210
     }
   ]
 }

@@ -1,0 +1,13 @@
+# Public download repository: never include private signing or account material.
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+.env
+.env.*
+analysis/
+build/
+logs/
+*.log
