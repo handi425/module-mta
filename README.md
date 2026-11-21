@@ -2,7 +2,7 @@
 
 Katalog unduhan indikator untuk aplikasi custom **MetaTrader 5**.
 
-Gunakan APK custom **6314 / 500.6310-mtc.4** atau lebih baru untuk seluruh fitur terbaru. Host **API 4** mendukung Smart Money Concepts [LuxAlgo] dan tetap menerima paket API 1/2/3. **SMC memerlukan APK 6314/API 4**; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi delapan paket: enam port dan dua contoh MA. Ketujuh paket terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
+Gunakan APK custom **6314 / 500.6310-mtc.4** atau lebih baru untuk seluruh fitur terbaru. Host **API 4** mendukung Smart Money Concepts [LuxAlgo] dan tetap menerima paket API 1/2/3. **SMC memerlukan APK 6314/API 4**; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi enam indikator custom. Lima port terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
 
 ## Memasang indikator
 
@@ -23,7 +23,6 @@ Katalog: [`catalog.json`](https://raw.githubusercontent.com/handi425/module-mta/
 | HPX Quarter Zones | Grid quarter, zona, sub-quarter dan penanda harga pada sumbu chart; versi 2.3.1 membutuhkan minimal APK 6313/API 3. |
 | HPX ZWave Pro | Analisis gelombang dan proyeksi dari riwayat harga. |
 | Smart Money Concepts [LuxAlgo] | Struktur internal/swing, BOS/CHoCH, OB, EQH/EQL, FVG MTF, level D1/W1/MN1, zona premium/discount dan warna candle; membutuhkan APK 6314/API 4. |
-| EMA 20 / SMA 50 | Modul contoh moving average. |
 
 Semua modul custom pada rilis ini berjalan tanpa push notification, suara, email atau notifikasi Android. Modul tidak membuka, mengubah atau menutup order.
 
@@ -40,6 +39,7 @@ Isi kotak OB, breaker dan FVG FiboZone memakai opasitas sekitar 15%, dengan warn
 ## Paket dan katalog
 
 Setiap entri katalog mencantumkan identitas, versi, ukuran dan SHA-256 paket. Aplikasi memeriksa ukuran, hash dan tanda tangan paket sebelum memasukkannya ke library. Nama berkas unduhan tetap pada folder `modules/`; pembaruan isi paket harus disertai pembaruan metadata katalog.
+Perubahan daftar katalog tidak menghapus paket yang sudah tersimpan di library atau pemasangannya pada chart secara otomatis.
 
 Kunci penandatanganan dan kredensial akun tidak disimpan pada repository publik ini.
 
