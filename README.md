@@ -2,7 +2,7 @@
 
 Katalog unduhan indikator untuk aplikasi custom **MetaTrader 5**.
 
-Gunakan APK custom **6315 / 500.6310-mtc.5** atau lebih baru untuk seluruh perbaikan terbaru, bersama **Smart Money Concepts [LuxAlgo] 1.0.1**. Host **API 4** tetap menerima paket API 1/2/3. Batas fitur minimum **SMC adalah APK 6314/API 4**; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi enam indikator custom. Lima port terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
+Gunakan APK custom **6316 / 500.6310-mtc.6** atau lebih baru bersama **Smart Money Concepts [LuxAlgo] 1.0.2**. Versi SMC ini memerlukan **API 5/APK 6316** untuk perhitungan latar belakang dan publikasi hasil yang memeriksa identitas chart. Host **API 5** tetap menerima paket API 1/2/3/4; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi enam indikator custom. Lima port terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
 
 ## Memasang indikator
 
@@ -22,7 +22,7 @@ Katalog: [`catalog.json`](https://raw.githubusercontent.com/handi425/module-mta/
 | FiboZone Pro | Pivot Fibonacci, order block/breaker dan FVG. |
 | HPX Quarter Zones | Grid quarter, zona, sub-quarter dan penanda harga pada sumbu chart; versi 2.3.1 membutuhkan minimal APK 6313/API 3. |
 | HPX ZWave Pro | Analisis gelombang dan proyeksi dari riwayat harga. |
-| Smart Money Concepts [LuxAlgo] | Struktur internal/swing, BOS/CHoCH, OB, EQH/EQL, FVG MTF, level D1/W1/MN1, zona premium/discount dan warna candle; membutuhkan APK 6314/API 4. |
+| Smart Money Concepts [LuxAlgo] | Struktur internal/swing, BOS/CHoCH, OB, EQH/EQL, FVG MTF, level D1/W1/MN1, zona premium/discount dan warna candle; membutuhkan APK 6316/API 5. |
 
 Semua modul custom pada rilis ini berjalan tanpa push notification, suara, email atau notifikasi Android. Modul tidak membuka, mengubah atau menutup order.
 
@@ -32,7 +32,9 @@ Enam port tambahan menggambar melalui Canvas tanpa membuat objek grafis chart. G
 
 SMC menyediakan seluruh 52 kontrol input sumber yang dapat diedit, bersama delapan judul bagian pada 60 baris halaman parameter native. Pilihan timeframe FVG mencakup `Current` dan 21 timeframe MT5. Ketika riwayat broker masih dimuat, indikator menunggu dan mencoba lagi tanpa menghapus pemasangannya. SMC tidak mempunyai alert atau notifikasi.
 
-Pada SMC 1.0.1, isi kotak OB/FVG memakai alpha maksimal 0x26 (sekitar 15% opacity). Warna dan alpha batas serta zona premium/discount dipertahankan. Garis dan teks strong/weak maupun MTF berakhir di candle nyata terakhir, tanpa label 20 bar ke depan atau penempatan mengikuti viewport. APK 6315 memperbaiki cleanup saat surface chart berubah agar callback Layer lama tidak menghapus Layer pengganti.
+Sejak SMC 1.0.1, isi kotak OB/FVG memakai alpha maksimal 0x26 (sekitar 15% opacity). Warna dan alpha batas serta zona premium/discount dipertahankan. Garis dan teks strong/weak maupun MTF berakhir di candle nyata terakhir, tanpa label 20 bar ke depan atau penempatan mengikuti viewport. APK 6315 memperbaiki cleanup saat surface chart berubah agar callback Layer lama tidak menghapus Layer pengganti.
+
+SMC 1.0.2 menghitung pada worker latar belakang dengan antrean terbatas, menggabungkan permintaan yang menunggu dan memakai kembali hasil ketika data/parameter tidak berubah. Renderer memproyeksikan dan menggambar geometri yang relevan dengan area terlihat, serta memakai cache proyeksi yang mengikuti perubahan sumbu native. Riwayat tidak dipangkas dan aturan sinyal tetap sama. Perbaikan transparansi, jangkar candle asli dan cleanup APK 6315 dipertahankan.
 
 Quarter menandai setiap level utama di skala harga kanan dengan warna levelnya. Jika angka level akan menutup harga berjalan atau terpotong batas chart, hanya tanda garis pada harga tepatnya yang ditampilkan.
 
@@ -57,7 +59,7 @@ Pembaruan APK tidak memperbarui paket indikator di library secara otomatis; undu
 
 ## Source Smart Money Concepts
 
-Smart Money Concepts [LuxAlgo] berasal dari [publikasi resmi LuxAlgo](https://www.tradingview.com/script/CnB3fSph-Smart-Money-Concepts-SMC-LuxAlgo/), © LuxAlgo. Port Java/Canvas, Pine asli, SDK API 4, pengujian dan petunjuk build tersedia di [`sources/luxalgo-smc-source.zip`](sources/luxalgo-smc-source.zip), dengan checksum pada [berkas SHA-256](sources/luxalgo-smc-source.zip.sha256).
+Smart Money Concepts [LuxAlgo] berasal dari [publikasi resmi LuxAlgo](https://www.tradingview.com/script/CnB3fSph-Smart-Money-Concepts-SMC-LuxAlgo/), © LuxAlgo. Port Java/Canvas, Pine asli, SDK API 5, pengujian dan petunjuk build tersedia di [`sources/luxalgo-smc-source.zip`](sources/luxalgo-smc-source.zip), dengan checksum pada [berkas SHA-256](sources/luxalgo-smc-source.zip.sha256).
 
 Source dan adaptasi SMC didistribusikan dengan [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) untuk penggunaan nonkomersial. Pertahankan atribusi LuxAlgo, pemberitahuan perubahan dan lisensi yang sama ketika mendistribusikan adaptasi. Port menghapus seluruh alert dan mengganti gambar Pine dengan Canvas; port ini tidak disponsori atau disahkan LuxAlgo. Keystore dan source host privat tidak disertakan dalam ZIP publik.
 
@@ -69,5 +71,5 @@ Checksum tersedia pada [berkas SHA-256](sources/hpx-zwave-source.zip.sha256).
 Notis asli dipertahankan, dan salinan lisensi MPL-2.0 disertakan pada arsip.
 Arsip ZWave tetap memuat source SDK API 3 dan skrip build SDK; native payload dan class Java
 dapat dibangun tanpa keystore. Kunci privat tidak disertakan dalam arsip ini.
-Arsip ini tidak diperbarui ke API 4 pada rilis SMC. Paket ZWave API 2 yang
+Arsip ini tetap SDK API 3 pada rilis API 5 ini. Paket ZWave API 2 yang
 dipublikasikan tetap kompatibel dan payload native tidak berubah.
