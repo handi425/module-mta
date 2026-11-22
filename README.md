@@ -2,7 +2,9 @@
 
 Katalog unduhan indikator untuk aplikasi custom **MetaTrader 5**.
 
-Gunakan APK custom **6316 / 500.6310-mtc.6** atau lebih baru bersama **Smart Money Concepts [LuxAlgo] 1.0.2**. Versi SMC ini memerlukan **API 5/APK 6316** untuk perhitungan latar belakang dan publikasi hasil yang memeriksa identitas chart. Host **API 5** tetap menerima paket API 1/2/3/4; **HPX Quarter Zones 2.3.1 tetap memerlukan minimal APK 6313/API 3**. Katalog berisi enam indikator custom. Lima port terdahulu dipertahankan tanpa perubahan. Paket `.mt5ind` merupakan hasil konversi indikator; MT5 Android resmi tidak menjalankan paket ini atau source MQL5/Pine secara langsung.
+Gunakan APK custom **6317 / 500.6310-mtc.7** atau lebih baru untuk **Zwave Core 1.0.0**, yang memerlukan **API 6/APK 6317**. Katalog berisi tujuh indikator custom; keenam paket katalog sebelumnya tetap sama. Host API 6 menerima paket API 1–6. SMC 1.0.2 tetap memerlukan minimal APK 6316/API 5, sedangkan HPX Quarter Zones 2.3.1 memerlukan APK 6313/API 3.
+
+Paket `.mt5ind` merupakan hasil konversi indikator. Aplikasi custom memakai package `net.metaquotes.metatrader5` dan label **MetaTrader 5**; MT5 Android resmi tidak menyediakan API modul ini atau menjalankan source MQL5/Pine secara langsung.
 
 ## Memasang indikator
 
@@ -23,12 +25,13 @@ Katalog: [`catalog.json`](https://raw.githubusercontent.com/handi425/module-mta/
 | HPX Quarter Zones | Grid quarter, zona, sub-quarter dan penanda harga pada sumbu chart; versi 2.3.1 membutuhkan minimal APK 6313/API 3. |
 | HPX ZWave Pro | Analisis gelombang dan proyeksi dari riwayat harga. |
 | Smart Money Concepts [LuxAlgo] | Struktur internal/swing, BOS/CHoCH, OB, EQH/EQL, FVG MTF, level D1/W1/MN1, zona premium/discount dan warna candle; membutuhkan APK 6316/API 5. |
+| Zwave Core | ZigZag/Elliott, MACD divergence, Fibonacci dan shadow korelasi dari feed broker; versi 1.0.0 membutuhkan APK 6317/API 6. |
 
 Semua modul custom pada rilis ini berjalan tanpa push notification, suara, email atau notifikasi Android. Modul tidak membuka, mengubah atau menutup order.
 
 Riwayat harga yang diperlukan harus sudah tersedia sebelum perhitungan dapat ditampilkan.
 
-Enam port tambahan menggambar melalui Canvas tanpa membuat objek grafis chart. Garis, zona dan teks tetap terikat ke waktu/harga sumber ketika chart digeser atau diperbesar. HPX ZWave tidak memiliki tombol di chart; derajat proyeksi dipilih melalui `InpFibonacciDegree` pada pengaturan indikator.
+Tujuh port tambahan menggambar melalui Canvas tanpa membuat objek grafis chart. Garis, zona dan teks tetap terikat ke waktu/harga sumber ketika chart digeser atau diperbesar. HPX ZWave tidak memiliki tombol di chart; derajat proyeksi dipilih melalui `InpFibonacciDegree` pada pengaturan indikator.
 
 SMC menyediakan seluruh 52 kontrol input sumber yang dapat diedit, bersama delapan judul bagian pada 60 baris halaman parameter native. Pilihan timeframe FVG mencakup `Current` dan 21 timeframe MT5. Ketika riwayat broker masih dimuat, indikator menunggu dan mencoba lagi tanpa menghapus pemasangannya. SMC tidak mempunyai alert atau notifikasi.
 
@@ -55,7 +58,17 @@ Nama aplikasi tetap **MetaTrader 5**. APK rilis dan [metadata pembaruan](https:/
 Versi yang mendukung updater memeriksa GitHub saat aplikasi digunakan, dengan jeda pemeriksaan enam jam. APK baru diunduh dan diverifikasi otomatis; pemasangan tetap memerlukan persetujuan melalui installer Android. Izin memasang dari aplikasi ini diminta melalui pengaturan Android saat pertama kali diperlukan. Pemeriksaan manual tersedia pada **Modul → Update APK**.
 
 Setiap rilis memakai versionCode lebih tinggi, package yang sama, serta sertifikat proyek yang sama. Tidak perlu uninstall. Berkas APK sementara dibersihkan setelah versi baru berjalan.
-Pembaruan APK tidak memperbarui paket indikator di library secara otomatis; unduh atau perbarui paket SMC terpisah melalui halaman Modul.
+Pembaruan APK tidak memperbarui paket indikator di library secara otomatis; unduh atau perbarui paket SMC dan Zwave Core terpisah melalui halaman Modul.
+
+## Zwave Core dan sumber datanya
+
+Zwave Core menyediakan seluruh **74 kontrol input** sumber bersama sepuluh judul bagian pada **84 baris parameter native**. Primary menghitung candle tertutup; shadow berlabel `S:` dapat diperbarui pada tick aktif dan hitungan sementara memakai `?`. Panel struktur/shadow opsional, sedangkan status tersedia pada properti indikator. Analisis utama tetap berjalan ketika pembanding masih dimuat atau tidak tersedia.
+
+Candle dan MACD pembanding berasal dari **simbol broker pada akun/server yang sama**, bukan feed TradingView, OANDA atau CME. Preset mencoba nama simbol broker beserta suffix-nya; pilihan Manual tersedia bila pasangan otomatis tidak ditemukan. Jika simbol pembanding belum ada di Market Watch, host dapat menambahkannya untuk berlangganan kuotasi. Riwayat broker dimuat asinkron tanpa membuat chart tersembunyi. Sesi dan OHLC broker dapat berbeda dari source TradingView.
+
+Jangkar otomatis memakai bar bersama termuat pertama dengan ATR sebelumnya yang valid. Jangkar manual memakai bar bersama pertama pada/setelah waktu pilihan. Skala tetap pada jangkar dan tidak dinormalisasi ulang setiap tick. Fibonacci terbaru berakhir pada candle nyata terakhir beserta ekstensi bar yang dipilih. Pemetaan ini mengganti koordinat viewport Pine dengan jangkar waktu/harga tetap sehingga pan/zoom tidak membuat candle atau label mengambang.
+
+Source Pine lengkap, port Java, SDK API 6, fixture dan petunjuk build tersedia pada [`sources/zwave-core-source.zip`](sources/zwave-core-source.zip), dengan [checksum SHA-256](sources/zwave-core-source.zip.sha256). Source Zwave Core oleh **XoRonX | Mr Poleks** dan adaptasinya memakai [Mozilla Public License 2.0](https://mozilla.org/MPL/2.0/); pemberitahuan upstream dipertahankan. Kunci privat dan source host tidak disertakan dalam arsip publik ini.
 
 ## Source Smart Money Concepts
 
@@ -71,5 +84,5 @@ Checksum tersedia pada [berkas SHA-256](sources/hpx-zwave-source.zip.sha256).
 Notis asli dipertahankan, dan salinan lisensi MPL-2.0 disertakan pada arsip.
 Arsip ZWave tetap memuat source SDK API 3 dan skrip build SDK; native payload dan class Java
 dapat dibangun tanpa keystore. Kunci privat tidak disertakan dalam arsip ini.
-Arsip ini tetap SDK API 3 pada rilis API 5 ini. Paket ZWave API 2 yang
+Arsip ini tetap SDK API 3 pada rilis API 6 ini. Paket ZWave API 2 yang
 dipublikasikan tetap kompatibel dan payload native tidak berubah.

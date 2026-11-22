@@ -48,6 +48,14 @@
       "url": "modules/smc.mt5ind",
       "sha256": "a15eaa1bb35f7cb27eefdbd6a777ed64f8f9f7d2759276462a8c3bd876505d54",
       "size": 29460
+    },
+    {
+      "id": "xoronx.zwavecore",
+      "name": "Zwave Core",
+      "version": "1.0.0",
+      "url": "modules/zwavecore.mt5ind",
+      "sha256": "ec139b164aa803c5ae7c3fcad8fb7f140f23352678f7fef7579b318bab6293de",
+      "size": 50449
     }
   ]
 }
