@@ -2,7 +2,9 @@
 
 Katalog unduhan indikator untuk aplikasi custom **MetaTrader 5**.
 
-Gunakan APK custom **6317 / 500.6310-mtc.7** atau lebih baru untuk **Zwave Core 1.0.0**, yang memerlukan **API 6/APK 6317**. Katalog berisi tujuh indikator custom; keenam paket katalog sebelumnya tetap sama. Host API 6 menerima paket API 1–6. SMC 1.0.2 tetap memerlukan minimal APK 6316/API 5, sedangkan HPX Quarter Zones 2.3.1 memerlukan APK 6313/API 3.
+APK terbaru **6318 / 500.6310-mtc.8** menambahkan fitur bawaan **Entry Ajaib PLAN**, dibuka melalui **Modul → PLAN**. Pengaturan mencakup BUY/SELL, DIRECT/RETEST, Knife, layer/grid, LOT/Risk%, SL/TP dan timeframe konfirmasi. Simpan draf untuk menampilkan garis yang dapat digeser, lalu tinjau dan tekan ARM untuk mengaktifkan pengiriman order setelah candle tertutup. Perubahan pengaturan/level, pergantian akun/chart, restart atau meninggalkan aplikasi membatalkan ARM. Pemantauan pending berjalan saat aplikasi terbuka. Tidak ada notifikasi tambahan. Alur pengiriman diuji memakai broker simulasi; eksekusi broker sesungguhnya belum diuji.
+
+Zwave Core 1.0.0 memerlukan **API 6/APK 6317**. Katalog tetap berisi tujuh indikator custom dengan paket yang sama. Host API 6 menerima paket API 1–6. SMC 1.0.2 tetap memerlukan minimal APK 6316/API 5, sedangkan HPX Quarter Zones 2.3.1 memerlukan APK 6313/API 3. PLAN tersedia di APK dan tidak menambahkan paket indikator ke katalog.
 
 Paket `.mt5ind` merupakan hasil konversi indikator. Aplikasi custom memakai package `net.metaquotes.metatrader5` dan label **MetaTrader 5**; MT5 Android resmi tidak menyediakan API modul ini atau menjalankan source MQL5/Pine secara langsung.
 
